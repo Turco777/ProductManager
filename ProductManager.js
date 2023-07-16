@@ -42,6 +42,41 @@ class ProductManager {
 
     return product;
   }
+
+  updateProduct(productId, updatedFields) {
+    const productIndex = this.products.findIndex(
+      (product) => product.id === productId
+    );
+
+    if (productIndex === -1) {
+      throw new Error("Producto no encontrado para actualizar.");
+    }
+
+    const updatedProduct = {
+      ...this.products[productIndex],
+      ...updatedFields,
+      id: productId, // Asegurarse de mantener el mismo ID.
+    };
+
+    this.products[productIndex] = updatedProduct;
+
+    console.log("Producto actualizado:");
+    console.log(updatedProduct);
+  }
+
+  deleteProduct(productId) {
+    const productIndex = this.products.findIndex(
+      (product) => product.id === productId
+    );
+
+    if (productIndex === -1) {
+      throw new Error("Producto no encontrado para eliminar.");
+    }
+
+    this.products.splice(productIndex, 1);
+
+    console.log(`Producto con ID ${productId} eliminado.`);
+  }
 }
 
 // Crear una instancia de la clase ProductManager
@@ -95,6 +130,22 @@ try {
 try {
   const product = productManager.getProductById(10);
   console.log("Producto encontrado:", product);
+} catch (error) {
+  console.log("Error:", error.message);
+}
+
+try {
+  productManager.updateProduct(1, {
+    title: "Producto actualizado",
+    price: 300,
+  });
+} catch (error) {
+  console.log("Error:", error.message);
+}
+
+// Ejemplo de uso del método deleteProduct
+try {
+  productManager.deleteProduct(1);
 } catch (error) {
   console.log("Error:", error.message);
 }
