@@ -149,3 +149,5 @@ try {
 } catch (error) {
   console.log("Error:", error.message);
 }
+
+module.exports = ProductManager;
