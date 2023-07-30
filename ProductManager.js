@@ -78,7 +78,7 @@ class ProductManager {
     console.log(`Producto con ID ${productId} eliminado.`);
   }
 }
-
+/* 
 // Crear una instancia de la clase ProductManager
 const productManager = new ProductManager();
 
@@ -149,5 +149,5 @@ try {
 } catch (error) {
   console.log("Error:", error.message);
 }
-
+ */
 module.exports = ProductManager;
