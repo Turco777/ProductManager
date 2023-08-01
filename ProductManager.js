@@ -79,6 +79,8 @@ class ProductManager {
   }
 }
 
+const productManager = new ProductManager();
+
 //! Agrego 10 productos
 productManager.addProduct(
   "Arroz",
