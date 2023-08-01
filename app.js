@@ -27,7 +27,7 @@ productManager.addProduct(
 );
 
 productManager.addProduct(
-  "Carne",
+  "Carne de cerdo",
   "Descripción del producto 3",
   1000,
   "URL de la imagen del producto 3",
